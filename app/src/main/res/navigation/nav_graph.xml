@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/calculatorFragment2">
+    <fragment
+        android:id="@+id/calculatorFragment2"
+        android:name="com.example.calculator.fragment.CalculatorFragment"
+        android:label="fragment_calculator"
+        tools:layout="@layout/fragment_calculator" >
+        <action
+            android:id="@+id/action_calculatorFragment2_to_aboutSchoolFragment"
+            app:destination="@id/aboutSchoolFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/aboutAppFragment2"
+        android:name="com.example.calculator.fragment.AboutAppFragment"
+        android:label="fragment_about_app"
+        tools:layout="@layout/fragment_about_app" >
+        <action
+            android:id="@+id/action_aboutAppFragment2_to_calculatorFragment2"
+            app:destination="@id/calculatorFragment2" />
+    </fragment>
+    <activity
+        android:id="@+id/aboutSchoolFragment"
+        android:name="com.example.calculator.fragment.AboutSchoolFragment"
+        android:label="activity_aabout_school_fragment"
+        tools:layout="@layout/activity_aabout_school_fragment" />
+</navigation>

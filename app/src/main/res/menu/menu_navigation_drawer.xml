@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/calculatorFragment2"
+        android:icon="@drawable/ic_calculate"
+        android:title="@string/calculator"/>
+
+    <item android:title="@string/application">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/aboutAppFragment2"
+                    android:icon="@drawable/ic_app"
+                    android:title="@string/about_app"/>
+                <item
+                    android:id="@+id/application_code"
+                    android:icon="@drawable/ic_code"
+                    android:title="@string/github_code"/>
+
+            </group>
+        </menu>
+    </item>
+
+
+    <item android:title="School">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/aboutSchoolFragment"
+                    android:icon="@drawable/ic_school"
+                    android:title="@string/about_school"/>
+
+                <item
+                    android:id="@+id/schoolWeblog"
+                    android:icon="@drawable/ic_web"
+                    android:title="@string/school_weblog"/>
+
+            </group>
+        </menu>
+    </item>
+
+</menu>
