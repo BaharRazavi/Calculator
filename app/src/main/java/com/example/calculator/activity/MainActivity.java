@@ -29,7 +29,6 @@ public class MainActivity extends AppCompatActivity {
     private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle actionBarDrawerToggle;
     boolean doubleBackToExitPressedOnce = false;
-    NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
 
 
     @Override
@@ -57,7 +56,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void selectDrawerItem(MenuItem menuItem) {
-
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+        //swich case for changing layout from navigation drawer
         switch (menuItem.getItemId()){
             case R.id.calculatorFragment2:
                 navController.navigate(R.id.calculatorFragment2);
@@ -72,12 +72,11 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(codeIntent);
                 break;
 
-            case R.id.aboutSchoolFragment:
-                navController.navigate(R.id.aboutSchoolFragment);
+            case R.id.aboutSchoolFragment2:
+                navController.navigate(R.id.aboutSchoolFragment2);
                 break;
 
             case R.id.schoolWeblog:
-
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://drahalimmarvasti.blogfa.com/"));
                 startActivity(browserIntent);
                 break;
@@ -103,6 +102,7 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    //show exit dialog
     private void showExitDialog(){
         AlertDialog alertDialog = new AlertDialog.Builder(this)
                 .setIcon(android.R.drawable.ic_dialog_alert)

@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Calculator</string>
-    <!-- TODO: Remove or change this placeholder text -->
+
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="enter_the_first_number">Enter the first number</string>
     <string name="first_number">First number</string>
@@ -14,4 +15,10 @@
     <string name="github_code">Github Code</string>
     <string name="school_weblog">School Weblog</string>
     <string name="application">Application</string>
+    <string name="text1">این اپلیکیشن توسط سیده بهار رضوی، دانش آموز پایه نهم الف از مدرسه ی دکتر احمدعلیم مروستی لاهیجان ساخته شده است.</string>
+    <string name="text2">این برنامه، ماشین حساب ساده ای است که قابلیت محاسبه ی ریاضی رد 4 عمل اصلی را دارد و می تواند در حوزه های مختلف مورد استفاده قرار گیرد.
+اپ در اندروید استودیو (َAndroid Studio ) ساخته و با زبان های جاوا (java ) و اکس ام ال (XML ) نوشته شده است. .</string>
+    <string name="text3">این اپلیکیشن در کافه بازار نیز موجود است و از می توانید از این طریق هم آن را نصب کنید.</string>
+    <string name="school">مدرسه دکتر احمد علیم</string>
+
 </resources>

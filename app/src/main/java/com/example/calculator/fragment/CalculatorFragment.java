@@ -2,6 +2,8 @@ package com.example.calculator.fragment;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.text.TextUtils;
@@ -28,8 +30,14 @@ public class CalculatorFragment extends Fragment {
         binding = FragmentCalculatorBinding.inflate(inflater,container,false);
         return binding.getRoot();
 
+    }
 
-        binding.imageViewPlus.setOnClickListener(view -> {
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+
+        binding.imageViewPlus.setOnClickListener(view0 -> {
 
             //Rotation animation
             RotateAnimation rotateAnimation = new RotateAnimation(0, 180, RotateAnimation.RELATIVE_TO_SELF,
@@ -46,7 +54,7 @@ public class CalculatorFragment extends Fragment {
         });
 
 
-        binding.imageViewMines.setOnClickListener(view -> {
+        binding.imageViewMines.setOnClickListener(view1 -> {
 
             //Rotation animation
             RotateAnimation rotateAnimation = new RotateAnimation(0, 180, RotateAnimation.RELATIVE_TO_SELF,
@@ -64,7 +72,7 @@ public class CalculatorFragment extends Fragment {
         });
 
 
-        binding.imageViewMultiplied.setOnClickListener(view -> {
+        binding.imageViewMultiplied.setOnClickListener(view2 -> {
 
             //Rotation animation
             RotateAnimation rotateAnimation = new RotateAnimation(0, 180, RotateAnimation.RELATIVE_TO_SELF,
@@ -80,7 +88,7 @@ public class CalculatorFragment extends Fragment {
             binding.textViewAnswer.setText(firstNumber * secondNumber + "");
         });
 
-        binding.imageViewDivided.setOnClickListener(view -> {
+        binding.imageViewDivided.setOnClickListener(view3 -> {
 
             //Rotation animation
             RotateAnimation rotateAnimation = new RotateAnimation(0, 180, RotateAnimation.RELATIVE_TO_SELF,
@@ -100,13 +108,16 @@ public class CalculatorFragment extends Fragment {
             binding.textViewAnswer.setText(nf.format(num));
 
 
-//            if (secondNumber == 0) {
-//                binding.textViewAnswer.setText("∞");
-////                Toast.makeText(getActivity(), "Cannot divide by zero", Toast.LENGTH_SHORT).show();
-//
-//            }
+            if (secondNumber == 0) {
+                binding.textViewAnswer.setText("∞");
+                Toast.makeText(getActivity(), "Cannot divide by zero", Toast.LENGTH_SHORT).show();
+
+            }
 
         });
 
     }
+
+
+
 }

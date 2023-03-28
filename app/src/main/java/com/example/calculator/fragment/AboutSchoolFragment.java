@@ -1,16 +1,26 @@
 package com.example.calculator.fragment;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 
-import com.example.calculator.R;
+import androidx.fragment.app.Fragment;
 
-public class AboutSchoolFragment extends AppCompatActivity {
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+import com.example.calculator.R;
+import com.example.calculator.databinding.FragmentAboutSchoolBinding;
+
+
+public class AboutSchoolFragment extends Fragment {
+
+    private FragmentAboutSchoolBinding binding;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_aabout_school_fragment);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        binding = FragmentAboutSchoolBinding.inflate(inflater,container,false);
+        return binding.getRoot();
     }
 }
