@@ -114,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
                 })
                 .setNegativeButton("No", (dialogInterface, i) -> {
                     //set what should happen when negative button is clicked
-                    Toast.makeText(getApplicationContext(),"Nothing Happened",Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(),"Welcome back.",Toast.LENGTH_LONG).show();
                 })
                 .show();
 

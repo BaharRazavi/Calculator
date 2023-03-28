@@ -47,10 +47,16 @@ public class CalculatorFragment extends Fragment {
             binding.imageViewPlus.startAnimation(rotateAnimation);
 
 
-            //Calculate
-            firstNumber = Double.parseDouble(binding.editTextFirstNumber.getText().toString());
-            secondNumber = Double.parseDouble(binding.editTextSecondNumber.getText().toString());
-            binding.textViewAnswer.setText(firstNumber + secondNumber + "");
+            //checking that is edit text empty or not
+            if (binding.editTextFirstNumber.getText().toString().equals("") || binding.editTextSecondNumber.getText().toString().equals(""))
+            {
+                Toast.makeText(getActivity(), "Empty edit text is not allowed", Toast.LENGTH_SHORT).show();
+            }else {
+                //Calculate
+                firstNumber = Double.parseDouble(binding.editTextFirstNumber.getText().toString());
+                secondNumber = Double.parseDouble(binding.editTextSecondNumber.getText().toString());
+                binding.textViewAnswer.setText(firstNumber + secondNumber + "");
+            }
         });
 
 
@@ -63,12 +69,16 @@ public class CalculatorFragment extends Fragment {
             rotateAnimation.setDuration(1000);
             binding.imageViewMines.startAnimation(rotateAnimation);
 
-
-            //Calculate
-            firstNumber = Double.parseDouble(binding.editTextFirstNumber.getText().toString());
-            secondNumber = Double.parseDouble(binding.editTextSecondNumber.getText().toString());
-            binding.textViewAnswer.setText(firstNumber - secondNumber + "");
-
+            //checking that is edit text empty or not
+            if (binding.editTextFirstNumber.getText().toString().equals("") || binding.editTextSecondNumber.getText().toString().equals(""))
+            {
+                Toast.makeText(getActivity(), "Empty edit text is not allowed", Toast.LENGTH_SHORT).show();
+            }else {
+                //Calculate
+                firstNumber = Double.parseDouble(binding.editTextFirstNumber.getText().toString());
+                secondNumber = Double.parseDouble(binding.editTextSecondNumber.getText().toString());
+                binding.textViewAnswer.setText(firstNumber - secondNumber + "");
+            }
         });
 
 
@@ -81,11 +91,16 @@ public class CalculatorFragment extends Fragment {
             rotateAnimation.setDuration(1000);
             binding.imageViewMultiplied.startAnimation(rotateAnimation);
 
-
-            //Calculate
-            firstNumber = Double.parseDouble(binding.editTextFirstNumber.getText().toString());
-            secondNumber = Double.parseDouble(binding.editTextSecondNumber.getText().toString());
-            binding.textViewAnswer.setText(firstNumber * secondNumber + "");
+            //checking that is edit text empty or not
+            if (binding.editTextFirstNumber.getText().toString().equals("") || binding.editTextSecondNumber.getText().toString().equals(""))
+            {
+                Toast.makeText(getActivity(), "Empty edit text is not allowed", Toast.LENGTH_SHORT).show();
+            }else {
+                //Calculate
+                firstNumber = Double.parseDouble(binding.editTextFirstNumber.getText().toString());
+                secondNumber = Double.parseDouble(binding.editTextSecondNumber.getText().toString());
+                binding.textViewAnswer.setText(firstNumber * secondNumber + "");
+            }
         });
 
         binding.imageViewDivided.setOnClickListener(view3 -> {
@@ -97,27 +112,28 @@ public class CalculatorFragment extends Fragment {
             rotateAnimation.setDuration(1000);
             binding.imageViewDivided.startAnimation(rotateAnimation);
 
-
-            //Calculate
-            firstNumber = Double.parseDouble(binding.editTextFirstNumber.getText().toString());
-            secondNumber = Double.parseDouble(binding.editTextSecondNumber.getText().toString());
-
-            NumberFormat nf = NumberFormat.getInstance();
-            nf.setMaximumFractionDigits(2);
-            double num = Double.parseDouble(firstNumber / secondNumber + "");
-            binding.textViewAnswer.setText(nf.format(num));
-
-
-            if (secondNumber == 0) {
+            //checking that is edit text empty or not
+            if (binding.editTextFirstNumber.getText().toString().equals("") || binding.editTextSecondNumber.getText().toString().equals(""))
+            {
+                Toast.makeText(getActivity(), "Empty edit text is not allowed", Toast.LENGTH_SHORT).show();
+            }
+            //checking that is the second number 0 or not
+            else if (secondNumber == 0) {
                 binding.textViewAnswer.setText("∞");
                 Toast.makeText(getActivity(), "Cannot divide by zero", Toast.LENGTH_SHORT).show();
-
             }
+            else {
+                //Calculate
+                firstNumber = Double.parseDouble(binding.editTextFirstNumber.getText().toString());
+                secondNumber = Double.parseDouble(binding.editTextSecondNumber.getText().toString());
+                NumberFormat nf = NumberFormat.getInstance();
+                nf.setMaximumFractionDigits(2);
+                double num = Double.parseDouble(firstNumber / secondNumber + "");
+                binding.textViewAnswer.setText(nf.format(num));
+            }
+
 
         });
 
     }
-
-
-
 }
