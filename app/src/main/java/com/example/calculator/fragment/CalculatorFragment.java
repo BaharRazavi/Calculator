@@ -112,21 +112,20 @@ public class CalculatorFragment extends Fragment {
             rotateAnimation.setDuration(1000);
             binding.imageViewDivided.startAnimation(rotateAnimation);
 
-            firstNumber = Double.parseDouble(binding.editTextFirstNumber.getText().toString());
-            secondNumber = Double.parseDouble(binding.editTextSecondNumber.getText().toString());
-
             //checking that is edit text empty or not
-            if (binding.editTextFirstNumber.getText().toString().equals("") || binding.editTextSecondNumber.getText().toString().equals(""))
-            {
+            if (binding.editTextFirstNumber.getText().toString().equals("") || binding.editTextSecondNumber.getText().toString().equals("")) {
                 Toast.makeText(getActivity(), "Empty edit text is not allowed", Toast.LENGTH_SHORT).show();
             }
             //checking that is the second number 0 or not
-            else if (secondNumber == 0) {
+
+            else if (Double.parseDouble(binding.editTextSecondNumber.getText().toString()) == 0) {
                 binding.textViewAnswer.setText("∞");
                 Toast.makeText(getActivity(), "Cannot divide by zero", Toast.LENGTH_SHORT).show();
             }
             else {
                 //Calculate
+                secondNumber = Double.parseDouble(binding.editTextSecondNumber.getText().toString());
+                firstNumber = Double.parseDouble(binding.editTextFirstNumber.getText().toString());
                 NumberFormat nf = NumberFormat.getInstance();
                 nf.setMaximumFractionDigits(2);
                 double num = Double.parseDouble(firstNumber / secondNumber + "");
