@@ -112,6 +112,9 @@ public class CalculatorFragment extends Fragment {
             rotateAnimation.setDuration(1000);
             binding.imageViewDivided.startAnimation(rotateAnimation);
 
+            firstNumber = Double.parseDouble(binding.editTextFirstNumber.getText().toString());
+            secondNumber = Double.parseDouble(binding.editTextSecondNumber.getText().toString());
+
             //checking that is edit text empty or not
             if (binding.editTextFirstNumber.getText().toString().equals("") || binding.editTextSecondNumber.getText().toString().equals(""))
             {
@@ -124,8 +127,6 @@ public class CalculatorFragment extends Fragment {
             }
             else {
                 //Calculate
-                firstNumber = Double.parseDouble(binding.editTextFirstNumber.getText().toString());
-                secondNumber = Double.parseDouble(binding.editTextSecondNumber.getText().toString());
                 NumberFormat nf = NumberFormat.getInstance();
                 nf.setMaximumFractionDigits(2);
                 double num = Double.parseDouble(firstNumber / secondNumber + "");

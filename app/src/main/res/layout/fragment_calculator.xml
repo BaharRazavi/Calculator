@@ -25,7 +25,7 @@
             android:id="@+id/edit_text_first_number"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="numberDecimal"
+            android:inputType="numberDecimal|numberSigned"
             android:textSize="@dimen/font_size_editText_4x" />
 
 
@@ -49,7 +49,7 @@
             android:id="@+id/edit_text_second_number"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="numberDecimal"
+            android:inputType="numberDecimal|numberSigned"
             android:textSize="@dimen/font_size_editText_4x"
             tools:ignore="TextContrastCheck" />
 
@@ -60,32 +60,28 @@
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="130dp"
-        android:src="@drawable/plus_button"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="100dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/input_layout2_text" />
+        app:layout_constraintTop_toBottomOf="@+id/input_layout2_text"
+        android:src="@drawable/plus_button"/>
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/image_view_mines"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:layout_marginStart="120dp"
         android:layout_marginTop="20dp"
-        android:src="@drawable/mines_button"
+        android:layout_marginEnd="110dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/input_layout2_text"
-        tools:ignore="ImageContrastCheck" />
+        android:src="@drawable/mines_button"/>
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/image_view_multiplied"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="130dp"
+        android:layout_marginStart="100dp"
         android:src="@drawable/multiplied_button"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/image_view_plus" />
 
@@ -93,11 +89,10 @@
         android:id="@+id/image_view_divided"
         android:layout_width="79dp"
         android:layout_height="79dp"
-        android:layout_marginStart="120dp"
+        android:layout_marginEnd="110dp"
         android:layout_marginTop="20dp"
         android:src="@drawable/divided_button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/image_view_plus"
         tools:ignore="ImageContrastCheck" />
 
@@ -106,7 +101,6 @@
         android:id="@+id/image_view_note"
         android:layout_width="260dp"
         android:layout_height="260sp"
-        android:layout_margin="20dp"
         android:src="@drawable/answer_image"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
