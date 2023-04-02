@@ -27,6 +27,7 @@ public class CalculatorFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        //view binding
         binding = FragmentCalculatorBinding.inflate(inflater,container,false);
         return binding.getRoot();
 
@@ -36,7 +37,7 @@ public class CalculatorFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-
+        //plus button
         binding.imageViewPlus.setOnClickListener(view0 -> {
 
             //Rotation animation
@@ -46,12 +47,11 @@ public class CalculatorFragment extends Fragment {
             rotateAnimation.setDuration(1000);
             binding.imageViewPlus.startAnimation(rotateAnimation);
 
-
             //checking that is edit text empty or not
-            if (binding.editTextFirstNumber.getText().toString().equals("") || binding.editTextSecondNumber.getText().toString().equals(""))
-            {
+            if (binding.editTextFirstNumber.getText().toString().equals("") || binding.editTextSecondNumber.getText().toString().equals("")) {
                 Toast.makeText(getActivity(), "Empty edit text is not allowed", Toast.LENGTH_SHORT).show();
-            }else {
+            }
+            else {
                 //Calculate
                 firstNumber = Double.parseDouble(binding.editTextFirstNumber.getText().toString());
                 secondNumber = Double.parseDouble(binding.editTextSecondNumber.getText().toString());
@@ -60,6 +60,7 @@ public class CalculatorFragment extends Fragment {
         });
 
 
+        //mines button
         binding.imageViewMines.setOnClickListener(view1 -> {
 
             //Rotation animation
@@ -70,8 +71,7 @@ public class CalculatorFragment extends Fragment {
             binding.imageViewMines.startAnimation(rotateAnimation);
 
             //checking that is edit text empty or not
-            if (binding.editTextFirstNumber.getText().toString().equals("") || binding.editTextSecondNumber.getText().toString().equals(""))
-            {
+            if (binding.editTextFirstNumber.getText().toString().equals("") || binding.editTextSecondNumber.getText().toString().equals("")) {
                 Toast.makeText(getActivity(), "Empty edit text is not allowed", Toast.LENGTH_SHORT).show();
             }else {
                 //Calculate
@@ -81,7 +81,7 @@ public class CalculatorFragment extends Fragment {
             }
         });
 
-
+        //multiplied button
         binding.imageViewMultiplied.setOnClickListener(view2 -> {
 
             //Rotation animation
@@ -103,6 +103,7 @@ public class CalculatorFragment extends Fragment {
             }
         });
 
+        //divided button
         binding.imageViewDivided.setOnClickListener(view3 -> {
 
             //Rotation animation
@@ -117,7 +118,6 @@ public class CalculatorFragment extends Fragment {
                 Toast.makeText(getActivity(), "Empty edit text is not allowed", Toast.LENGTH_SHORT).show();
             }
             //checking that is the second number 0 or not
-
             else if (Double.parseDouble(binding.editTextSecondNumber.getText().toString()) == 0) {
                 binding.textViewAnswer.setText("∞");
                 Toast.makeText(getActivity(), "Cannot divide by zero", Toast.LENGTH_SHORT).show();
@@ -126,13 +126,12 @@ public class CalculatorFragment extends Fragment {
                 //Calculate
                 secondNumber = Double.parseDouble(binding.editTextSecondNumber.getText().toString());
                 firstNumber = Double.parseDouble(binding.editTextFirstNumber.getText().toString());
+                //setting maximum fraction digits as 2
                 NumberFormat nf = NumberFormat.getInstance();
                 nf.setMaximumFractionDigits(2);
                 double num = Double.parseDouble(firstNumber / secondNumber + "");
                 binding.textViewAnswer.setText(nf.format(num));
             }
-
-
         });
 
     }

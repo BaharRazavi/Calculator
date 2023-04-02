@@ -34,10 +34,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //binding
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        //navigation drawer
+        //setting navigation drawer
         drawerLayout = binding.drawerLayout;
         actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.nav_open, R.string.nav_close);
 
@@ -57,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void selectDrawerItem(MenuItem menuItem) {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
-        //swich case for changing layout from navigation drawer
+        //switch case for changing layout by clicking on each menu of navigation drawer
         switch (menuItem.getItemId()){
             case R.id.calculatorFragment2:
                 navController.navigate(R.id.calculatorFragment2);
@@ -68,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
             case R.id.application_code:
+                //opening a site
                 Intent codeIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/BaharRazavi/Calculator"));
                 startActivity(codeIntent);
                 break;
@@ -77,6 +79,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
             case R.id.schoolWeblog:
+                //opening a site
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://drahalimmarvasti.blogfa.com/"));
                 startActivity(browserIntent);
                 break;
